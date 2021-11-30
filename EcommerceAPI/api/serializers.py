@@ -2,14 +2,14 @@ from django.db.models import fields
 from rest_framework import serializers
 from .models import *
 
-class CategorySerializer(serializers.Serializer):
+class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ['id', 
                   'title'
         ]
     
-class BookSerializer(serializers.Serializer):
+class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
         fields = ['id', 
@@ -26,7 +26,7 @@ class BookSerializer(serializers.Serializer):
                   
         ]
     
-class ProductSerializer(serializers.Serializer):
+class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ['id', 
