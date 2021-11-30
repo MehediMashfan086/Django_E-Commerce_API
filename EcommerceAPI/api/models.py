@@ -22,7 +22,7 @@ class Book(models.Model):
     date_created = models.DateField(auto_now_add= True)
     
     class Meta:
-        ordering = '_date_created'
+        ordering = ['-date_created']
         
     def __str__(self):
         return self.title
@@ -39,7 +39,7 @@ class Product(models.Model):
     date_created = models.DateField(auto_now_add= True)
     
     class Meta:
-        ordering = '_date_created'
+        ordering = ['-date_created']
         
     def __str__(self):
         return '{} {}'.format(self.product_tag, self.name)
