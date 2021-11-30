@@ -4,14 +4,14 @@ from .models import *
 
 class CategorySerializer(serializers.Serializer):
     class Meta:
-        fields = ('id', 
+        fields = ['id', 
                   'title'
-                  )
+        ]
         model = Category
     
 class BookSerializer(serializers.Serializer):
     class Meta:
-        fields = ('id', 
+        fields = ['id', 
                   'title',
                   'category',
                   'isbn',
@@ -23,12 +23,12 @@ class BookSerializer(serializers.Serializer):
                   'status',
                   'date_created'
                   
-                  )
+        ]
         model = Book
     
 class ProductSerializer(serializers.Serializer):
     class Meta:
-        fields = ('id', 
+        fields = ['id', 
                   'product_tag',
                   'name',
                   'category',
@@ -38,5 +38,5 @@ class ProductSerializer(serializers.Serializer):
                   'status',
                   'date_created'
                   
-                  )
+        ]
         model = Product
