@@ -4,13 +4,14 @@ from .models import *
 
 class CategorySerializer(serializers.Serializer):
     class Meta:
+        model = Category
         fields = ['id', 
                   'title'
         ]
-        model = Category
     
 class BookSerializer(serializers.Serializer):
     class Meta:
+        model = Book
         fields = ['id', 
                   'title',
                   'category',
@@ -24,10 +25,10 @@ class BookSerializer(serializers.Serializer):
                   'date_created'
                   
         ]
-        model = Book
     
 class ProductSerializer(serializers.Serializer):
     class Meta:
+        model = Product
         fields = ['id', 
                   'product_tag',
                   'name',
@@ -39,4 +40,3 @@ class ProductSerializer(serializers.Serializer):
                   'date_created'
                   
         ]
-        model = Product
