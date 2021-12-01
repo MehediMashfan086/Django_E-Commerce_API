@@ -11,6 +11,7 @@ class CategorySerializer(serializers.ModelSerializer):
         ]
     
 class BookSerializer(serializers.ModelSerializer):
+    created_by = serializers.ReadOnlyField(source = 'created_by.username')
     class Meta:
         model = Book
         fields = ['id', 
@@ -22,12 +23,14 @@ class BookSerializer(serializers.ModelSerializer):
                   'stock',
                   'description',
                   'imageUrl',
+                  'created_by',
                   'status',
                   'date_created'
                   
         ]
     
 class ProductSerializer(serializers.ModelSerializer):
+    created_by = serializers.ReadOnlyField(source = 'created_by.username')
     class Meta:
         model = Product
         fields = ['id', 
@@ -37,6 +40,7 @@ class ProductSerializer(serializers.ModelSerializer):
                   'price',
                   'stock',
                   'imageUrl',
+                  'created_by',
                   'status',
                   'date_created'
                   
